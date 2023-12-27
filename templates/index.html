@@ -7,15 +7,21 @@
     <input type="text" name="title" />
     <label for="details">Details</label>
     <input type="text" name="details" />
-    <input type="submit" value="Create" />
+    <input type="submit" class="btn btn-primary" value="Create" />
     </form>
 </div>
 {% for task in tasks %} 
- <h2>タイトル : {{ task.title }}</h2> 
- <p>詳細 : {{ task.details }}</p>
- <a href="/update/{{ task.id }}" role="button">Update</a> 
- <a href="/delete/{{ task.id }}" role="button">Delete</a> 
+<div class="row">
+ <div class="col-12 col-sm-6 col-md-4">
+  <div class="card mb-3">
+    <div class="card-body">
+    <h2 class="card-title text-primary"> {{ task.title }}</h2> 
+    <p class="card-text">詳細 : {{ task.details }}</p>
+    <a href="/update/{{ task.id }}" class="btn btn-primary" role="button">Update</a> 
+    <a href="/delete/{{ task.id }}" class="btn btn-primary" role="button">Delete</a> 
+    </div> 
+  </div> 
+ </div> 
+</div> 
  {% endfor %}
 {% endblock %}
-
-
